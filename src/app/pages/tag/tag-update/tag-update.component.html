@@ -1,0 +1,52 @@
+
+
+<form [formGroup]="updateFormGroup">
+
+<mat-toolbar color="primary">
+    <!-- <app-toggle-sidebar></app-toggle-sidebar> -->
+    <header>
+        <div class="header-title">
+          <mat-icon class="goBackPageIcon" (click)="backPage();">arrow_back</mat-icon>
+          {{tagId ? 'Update Tag' : 'New Tag'}}
+        </div>
+        <div> <button mat-raised-button
+                      (click)="updateTag(dragDrop.file)"
+        >Save</button></div>
+    </header>
+  </mat-toolbar>
+
+  <!-- [disabled]="! updateFormGroup.valid"-->
+
+  <app-header-language #tabLanguage>
+    <div class="update-container">
+
+        <h3 class="update-header">{{tagId ? 'Update Tag' : 'Add New Tag'}}</h3>
+        <div class="add-new-tag-wrapper">
+            <app-drag-and-drop-file #dragDrop [tag] = "tag"></app-drag-and-drop-file>
+        <ng-container formArrayName="locales" *ngFor="let locale of locales.controls; let i=index">
+
+          <mat-form-field appearance="outline" [formGroupName]="i" *ngIf="tabLanguage.activeLanguageIndex === i">
+            <mat-label> Tag Name </mat-label>
+            <input matInput formControlName="title" placeholder="Tag Name" (change)="getLocales();">
+          <mat-error *ngIf="locales.controls[i].get('title').errors?.required">
+             Tag name is required.
+          </mat-error>
+          </mat-form-field>
+        </ng-container>
+
+        <mat-form-field appearance="outline" *ngIf="tagTypes">
+            <mat-label>Tag Type</mat-label>
+              <mat-select formControlName="tag_type_id" >
+                <mat-option *ngFor="let tagType of tagTypes"  [value]='tagType.id'>
+                  {{tagType.name}}
+                </mat-option>
+              </mat-select>
+            <mat-error *ngIf="tag_type_id.hasError('required')">Tag type is required.</mat-error>
+          </mat-form-field>
+
+        </div>
+
+    </div>
+
+    </app-header-language>
+</form>

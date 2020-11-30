@@ -1,0 +1,126 @@
+
+
+.sidebar_menu{
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* box-shadow: 0 1px 12px 0 rgba(196, 196, 196, 0.7); */
+}
+
+  .sidebar_menu .menu-list {
+    flex: 1;
+    justify-content: normal;
+  }
+
+  .sidebar_menu .icon {
+    padding: 0 10px 0 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .sidebar_menu .label {
+    margin: 0;
+  }
+
+  .sidebar_menu .active-list-item {
+    color: #3f51b5 !important;
+  }
+
+  .sidebar_menu span{
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #344149;
+  }
+
+::ng-deep * .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+   padding: 0 18px !important;
+}
+
+::ng-deep .mat-nav-list .mat-list-item .mat-list-item-ripple {
+  visibility: hidden !important;
+}
+
+
+  ::ng-deep * .mat-drawer-content{
+    min-height: 200vh !important;
+    height: auto !important;
+  }
+  ::ng-deep * .mat-drawer{
+    overflow-y: hidden;
+  }
+
+ ::ng-deep * .mat-drawer-inner-container {
+   overflow: hidden;
+
+}
+
+  mat-icon{
+    color: #8895ae;
+  }
+
+
+mat-expansion-panel mat-list mat-icon{
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  color: #e8e8e8;
+}
+
+mat-expansion-panel mat-icon{
+  padding: 0 10px 0 0;
+}
+.mat-expansion-panel-header{
+  padding: 0 18px !important;
+  border-radius: 0 !important;
+}
+
+::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown {
+  display: none;
+}
+
+::ng-deep * .sidebar_menu:hover{
+  background-color: transparent !important;
+}
+
+.active, .active:hover{
+  background: #067cff !important;
+  color: #fff !important;
+}
+.active span{
+  color: #fff !important;
+}
+.active mat-icon{
+  color: #fff !important;
+}
+
+.active-alt-tap span{
+  color: #067cff !important;
+}
+.active-alt-tap mat-icon{
+  color: #0c6dd7 !important;
+}
+.east-west-icon{
+  margin-top: 50px;
+}
+.west-icon{
+  margin-left: auto;
+}
+
+::ng-deep* mat-expansion-panel{
+  width: 100% !important;
+}
+
+::ng-deep * mat-expansion-panel-header .mat-content{
+  justify-content: space-between !important;
+}
+
+::ng-deep* mat-panel-title{
+  width: 100% !important;
+}
+
+

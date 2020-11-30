@@ -1,0 +1,12 @@
+.home{
+    margin: 20px;
+}
+
+.home button{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #cc0b0b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}

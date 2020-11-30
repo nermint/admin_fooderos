@@ -1,0 +1,25 @@
+
+
+.npxDropzonePreview{
+  min-width: auto !important;
+  min-height: auto !important;
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.npxDropzonePreview img{
+  width: 100%;
+}
+
+.npx-dropzone{
+    height: 160px;
+    width: 160px;
+    overflow: hidden !important;
+}
+
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Your custom text ...";
+}

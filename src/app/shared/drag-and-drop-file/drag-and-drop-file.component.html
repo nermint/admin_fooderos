@@ -1,0 +1,18 @@
+<ngx-dropzone (change)="onSelect($event)"  class="npx-dropzone">
+
+    <ngx-dropzone-label>
+        <label for=""> Add file</label>
+        <br> <br>
+        <span>or drop file to upload</span>
+    </ngx-dropzone-label>
+
+
+    <ngx-dropzone-preview [removable]="true" (removed)="onRemove($event)" *ngIf="imgSrc" class="npxDropzonePreview">
+
+      <ngx-dropzone-label>
+           <img [src]="imgSrc" alt="">
+        </ngx-dropzone-label>
+
+    </ngx-dropzone-preview>
+
+  </ngx-dropzone>

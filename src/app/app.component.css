@@ -1,0 +1,207 @@
+:root {
+  --water-blue: #0c6dd7 !important;
+}
+
+::ng-deep * {
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+}
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  /* height: 1024px; */
+  background-color: #fff;
+  display: flex;
+}
+
+.rectangle {
+  width: 699px;
+  /* height: 1023px; */
+  height: 100vh;
+  background-color: #0c6dd7;
+  position: relative;
+  /* background-color: var(--water-blue); */
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 320.7px 0 0 222.8px;
+  border-color: transparent transparent transparent #0858ae;
+  position: relative;
+  bottom: 0;
+}
+.left-triangles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 452px 455px;
+  border-color: transparent transparent #0858ae transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.inner-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 155px 0 0 111px;
+  border-color: transparent transparent transparent #1b80ef;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: rotate(2deg);
+}
+
+.form-side {
+  display: block;
+  position: relative;
+  margin: auto;
+  text-align: center !important;
+}
+
+.container-info {
+  text-align: center;
+}
+
+.circle {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 4px 10px 0 rgba(45, 80, 238, 0.24);
+  background-color: #0371e8;
+}
+
+.nested-circle {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-welcome {
+  /* width: 355px; */
+  width: 100%;
+  height: 48px;
+  font-family: TTHoves;
+  font-size: 34px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: center;
+  color: #31373e;
+  padding: 20px 0 10px;
+  margin: 0 auto;
+}
+
+.header-welcome p {
+  text-align: center !important;
+}
+
+.phone-number-ph {
+  width: 387px;
+  /* width: 100%; */
+  height: 24px;
+  font-family: TTHoves;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center !important;
+  color: #919aa7;
+  padding-bottom: 20px;
+  margin: 10px auto;
+}
+
+.login-btn {
+  /* width: 100%; */
+  width: 427px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: #0371e8;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+.adding-phone-number {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.terms-and-conditions,
+.resend-code {
+  font-size: 16px;
+  color: #31373e;
+  margin-top: 28px;
+  margin-bottom: 30px;
+}
+
+.special,
+.special a {
+  color: #0371e8;
+  text-decoration: underline;
+}
+
+
+
+/* media queries */
+
+@media only screen and (max-width:1024px){
+  .login-container{
+    display: block;
+  }
+  .rectangle{
+    width:100% !important;
+  }
+  .login-btn{
+    width: 100%;
+  }
+  .mat-form-field input{
+    width: 100%;
+  }
+  .mat-form-fiel_2 {
+    width: 200px !important;
+
+  }
+  .adding-phone-number {
+    justify-content: space-around;
+   }
+   .verification_mat{
+    width: 70%;
+  }
+
+  .form-side{
+     width:70% !important;
+    margin-top: 40px;
+  }
+  .phone-number-ph {
+      margin-top: 2em;
+      width: 100%;
+      height: auto;
+  }
+
+
+}

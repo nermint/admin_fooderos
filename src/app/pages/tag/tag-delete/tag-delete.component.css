@@ -1,0 +1,31 @@
+.want-delete-parag{
+    margin: 40px 0 60px;
+}
+
+.mat-dialog-btn{
+   display: flex;
+   justify-content: center;
+}
+
+.mat-dialog-title{
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #1a242f;
+}
+
+hr{
+   color: #727880;
+}
+
+.want-delete-parag{
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #727880;
+}

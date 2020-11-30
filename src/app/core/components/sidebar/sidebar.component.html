@@ -1,0 +1,173 @@
+<div class="sidebar_menu"
+     (mouseenter)="toggleSideNav()"
+     (mouseleave)="toggleSideNav();"
+     [@onSideNavChange]="sidebarState">
+
+    <mat-nav-list class="menu-list">
+
+      <a mat-list-item routerLinkActive="active" routerLink="/dashboard/" [routerLinkActiveOptions]="{exact: true}" title="Dashboard" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState" >dashboard</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Dashboard</span>
+      </a>
+
+      <mat-divider></mat-divider>
+        <a mat-list-item title="Sifarişlər" class="mat-item">
+          <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/orders-icon.svg"></mat-icon>
+          <span class="label" [@labelAnimation]="sidebarState">Sifarişlər</span>
+        </a>
+
+      <!--     (mouseleave)="toggleSideNav();"-->
+      <mat-divider></mat-divider>
+<!--      (opened)="panelOpenState = true"-->
+<!--      (click)="mep.expanded = false;"-->
+
+      <mat-accordion>
+      <mat-expansion-panel   (opened)="panelOpenStateArr[0] = true"
+                             (closed)="panelOpenStateArr[0] = false"
+                             [class.mat-elevation-z0]="true"
+                             [(expanded)]="expandedPanelArr[0]"
+                             hideToggle>
+          <mat-expansion-panel-header
+                                       [ngClass]="{'active': child1RLA.isActive || child2RLA.isActive}"
+                                      >
+            <mat-panel-title >
+              <mat-icon [@iconAnimation]="sidebarState">content_copy</mat-icon>
+              <span class="label" [@labelAnimation]="sidebarState">Təqlər</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon *ngIf="!panelOpenStateArr[0]">arrow_right</mat-icon>
+              <mat-icon *ngIf="panelOpenStateArr[0]">arrow_drop_down</mat-icon>
+            </mat-panel-description>
+
+          </mat-expansion-panel-header>
+          <mat-list>
+            <a mat-list-item routerLinkActive="active-alt-tap"
+               routerLink="/dashboard/tag"
+               title="Restoranlar"
+               #child1RLA="routerLinkActive"
+               class="mat-alt-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Restoranlar</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item routerLink="/dashboard/tag"
+               routerLinkActive="active-alt-tap"
+               routerLink="/dashboard/test"
+               #child2RLA="routerLinkActive"
+               title="Şirniyyat evi" class="mat-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Şirniyyat evi</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item routerLink="/dashboard/tag" title="Market" class="mat-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Market</span>
+            </a>
+          </mat-list>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-divider></mat-divider>
+
+
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenStateArr[1] = true"
+                             (closed)="panelOpenStateArr[1] = false"
+                             [class.mat-elevation-z0]="true"
+                             [(expanded)]="expandedPanelArr[1]"
+                             hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title >
+              <mat-icon [@iconAnimation]="sidebarState">list_alt</mat-icon>
+              <span class="label" [@labelAnimation]="sidebarState">Kataloqlar</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon *ngIf="!panelOpenStateArr[1]">arrow_right</mat-icon>
+              <mat-icon *ngIf="panelOpenStateArr[1]">arrow_drop_down</mat-icon>
+            </mat-panel-description>
+
+          </mat-expansion-panel-header>
+          <mat-list>
+            <a mat-list-item
+               title="Restoranlar"
+               class="mat-alt-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Restoranlar</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item
+               title="Şirniyyat evi" class="mat-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Şirniyyat evi</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item routerLink="/dashboard/tag" title="Market" class="mat-item">
+              <mat-icon matListIcon>lens</mat-icon> <span class="label" [@labelAnimation]="sidebarState">Market</span>
+            </a>
+          </mat-list>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Work" class="mat-item">
+        <mat-icon class="icon"  [@iconAnimation]="sidebarState"><img src="assets/icons/shape.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Məhsullar</span>
+      </a>
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Partnyorlar" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/restaurant-icon.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Partnyorlar</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item   title="Müştərilər" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">people_outline</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Müştərilər</span>
+      </a>
+
+      <mat-divider></mat-divider>
+      <a mat-list-item  title="İstifadəçilər" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/users-icon.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">İstifadəçilər</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Rəylər" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/review-icon.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Rəylər</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Kompaniyalar" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/campaign-icon.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Kompaniyalar</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Xəritə" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"><img src="assets/icons/map-icon.svg"></mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Xəritə</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item  title="Tənzimləmələr" class="mat-item">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">settings</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Tənzimləmələr</span>
+      </a>
+
+      <a mat-list-item  title="" class="mat-item east-west-icon">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState" *ngIf="sidebarState==='close'">east</mat-icon>
+        <mat-icon class="icon" class="west-icon" [@iconAnimation]="sidebarState" *ngIf="sidebarState==='open'">west</mat-icon>
+      </a>
+
+    </mat-nav-list>
+
+</div>
+
+

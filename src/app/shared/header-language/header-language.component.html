@@ -1,0 +1,13 @@
+  <mat-tab-group (selectedTabChange)="tabChanged($event)">
+      <mat-tab *ngFor="let language of languages" label="{{language}}">
+
+      </mat-tab>
+  </mat-tab-group>
+
+  <ng-content>
+
+  </ng-content>
+
+  
+
+  <!-- (selectedTabChange)="tabChanged($event)"  -->

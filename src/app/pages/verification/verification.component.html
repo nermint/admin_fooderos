@@ -1,0 +1,58 @@
+<div class="login-container">
+  <div class="rectangle">
+    <div class="left-triangles">
+      <div class="inner-triangle"></div>
+      <div class="triangle-left"></div>
+    </div>
+    <div class="triangle-right"></div>
+  </div>
+
+  <div class="form-side">
+    <div class="circle">
+      <div class="nested-circle"></div>
+    </div>
+
+    <div class="header-welcome">
+      <p>Verification</p>
+    </div>
+
+    
+      
+    <div class="phone-number-ph">
+      Dear user, please enter the verification code which sent to  <span class="water-blue"> + {{verifyPhoneCode}} {{phoneWithSpaces}}</span>
+    </div>
+      
+
+    <form action="" [formGroup]="securityCodeGroup">
+      <div class="verification-side" >
+        <mat-form-field appearance="outline" class="verification_mat">
+          <mat-label> Security Code </mat-label>
+          <input matInput placeholder="Security Code" formControlName="otp" [formControl]="securityCode" required/>
+        </mat-form-field>
+      </div>
+
+     
+        <div class="expire-time" *ngIf="timeExpired">
+          Verification code expired. Try to resend
+        </div> 
+    
+      
+        <div class="show-expire-time" *ngIf="showExpiredTime">
+          <span>Code expires in: </span>
+          <span class="water-blue">{{minutes}}: {{seconds}}</span>
+      </div>
+
+  
+      <button class="login-btn" [class.disable]="timeExpired" [disabled]="disable_btn" (click)="verifyProcess()">Continue</button>
+  
+  
+      <div class="resend-code">
+        Didn't recieve a code? <span class="special"><a (click)='resend()'>Resend</a></span>
+      </div>
+    </form>
+
+
+    
+
+  </div>
+</div>

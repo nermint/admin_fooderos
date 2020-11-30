@@ -1,0 +1,47 @@
+
+
+
+
+
+<div class="super-admin-header">
+    <div class="left-admin-side">
+        <div class="rectangle">
+
+        </div>
+        <span>Super Admin</span>
+    </div>
+    <div class="right-admin-side">
+        <div class="online-side">
+            <span>Online</span>
+            <mat-slide-toggle color="primary" [(ngModel)]="isChecked"></mat-slide-toggle>
+
+        </div>
+        <mat-divider  [vertical]="true" style="height:50%"></mat-divider>
+        <mat-icon
+          class="notification-icon"
+          matBadge="1"
+          matBadgeSize="small"
+          matBadgeColor="primary"
+        >notifications_none
+        </mat-icon>
+        <mat-divider  [vertical]="true" style="height:50%"></mat-divider>
+
+        <div class="badge">
+
+        </div>
+        <div class="drop-down">
+              <div>John doe</div>
+              <mat-icon [matMenuTriggerFor]="menu">keyboard_arrow_down</mat-icon>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Profile</button>
+                <button mat-menu-item>Settings</button>
+                <button mat-menu-item>Logout</button>
+              </mat-menu>
+        </div>
+    </div>
+
+  </div>
+
+
+
+

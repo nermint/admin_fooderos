@@ -8,13 +8,10 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 })
 export class HeaderLanguageComponent implements OnInit {
 
-
-
   activeLanguage: string = 'az';
   activeLanguageIndex: number = 0;
 
   languages;
-
   constructor() { }
 
 
@@ -30,6 +27,5 @@ export class HeaderLanguageComponent implements OnInit {
     this.activeLanguageIndex = tabChangeEvent.index;
 
   }
-
 
 }

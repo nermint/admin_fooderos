@@ -26,11 +26,9 @@ export class DragAndDropFileComponent implements OnInit {
     return this._tag.getValue();
   }
 
-  files: File[] = [];
 
-  fileName: string;
   file;
-  prevFile: [];
+
   imgSrc;
   imageUrl = environment.imageUrl;
 
@@ -40,9 +38,6 @@ export class DragAndDropFileComponent implements OnInit {
   ngOnInit(): void {
     // console.log(this.tag);
 
-    // if ( this.tag ){
-    //   this.imgSrc = this.imageUrl + this.tag.media?.path + '/' + this.tag.media?.name;
-    // }
     this._tag
       .subscribe(x => {
         // console.log(this.tag);
@@ -69,7 +64,6 @@ export class DragAndDropFileComponent implements OnInit {
       comp.imgSrc = img;
       // console.log(img);
       this.file = img;
-      // if you want to do anything with img you can do it here
     });
 
   }

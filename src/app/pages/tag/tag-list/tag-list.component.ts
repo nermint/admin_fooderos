@@ -18,6 +18,7 @@ declare let alertify: any;
 
 
 export class TagListComponent implements OnInit {
+  // define display columns
   displayedColumns: string[] = [
     'id',
     'tag_name',
@@ -63,16 +64,6 @@ export class TagListComponent implements OnInit {
       this.dataSource.forEach(val => {
         val.locales = val.locales.reduce((obj, item) => ({...obj, [item.locale]: item}) , []);
     });
-
-
-      // this.dataSource = response.content.data.locales.reduce(function (r, a) {
-      //   r[a.locale] = r[a.locale] || [];
-      //   r[a.locale].push(a);
-      //   return r;
-
-      // }, Object.create(null));
-
-
 
       console.log('DATA SOURCE');
       console.log(this.dataSource);

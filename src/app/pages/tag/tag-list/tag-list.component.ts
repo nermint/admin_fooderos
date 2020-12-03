@@ -1,9 +1,8 @@
 import { Component, ElementRef, OnInit, Input, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { HeaderLanguageComponent } from 'src/app/shared/header-language/header-language.component';
-import { environment } from 'src/environments/environment';
-import { TagDeleteComponent } from '../tag-delete/tag-delete.component';
+import { AuthService } from 'services/auth.service';
+import { environment } from 'environment/environment';
+import { TagDeleteComponent } from 'tag/tag-delete/tag-delete.component';
 
 
 // alertify
@@ -28,7 +27,6 @@ export class TagListComponent implements OnInit {
     'action',
   ];
 
-  @ViewChild(HeaderLanguageComponent) child: HeaderLanguageComponent;
 
   dataSource;
 

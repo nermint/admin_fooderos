@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ITag} from '../models/tag';
-import {environment} from '../../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'environment/environment';
 
 
 @Component({
@@ -32,8 +31,6 @@ export class DragAndDropFileComponent implements OnInit {
   imgSrc;
   imageUrl = environment.imageUrl;
 
-  // @Input() tag: ITag;
-  tagData: ITag;
 
   ngOnInit(): void {
     // console.log(this.tag);

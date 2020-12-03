@@ -1,21 +1,15 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
-import { PhoneNumberService } from '../../core/services/phone-number.service';
-import { AuthService } from '../../core/services/auth.service';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
-import { ICountry } from 'src/app/shared/models/country';
+import { Router } from '@angular/router';
+import { PhoneNumberService } from 'services/phone-number.service';
+import { AuthService } from 'services/auth.service';
+import { FormControl, FormGroup , Validators } from '@angular/forms';
+import { ICountry } from 'shared/models/country';
 
-
-
-// interface Code{
-//   value:string;
-// }
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  // styleUrls: ['./login.component.css']
   styleUrls: ['../../app.component.css'],
   styles:[
     `
@@ -36,34 +30,33 @@ import { ICountry } from 'src/app/shared/models/country';
       margin: 20px auto 0;
       display: table
     }
-    
     `
   ]
 })
 export class LoginComponent {
-  
-  countries:ICountry;
+  countries: ICountry;
 
-  mobNumberPattern = "^((\\+91-?)|0)?[0-9 ]{9}$"; 
-  phoneNumberGroup:FormGroup;
+  mobNumberPattern = '^((\\+91-?)|0)?[0-9 ]{9}$';
+  phoneNumberGroup: FormGroup;
 
   initForm(){
-    this.phoneNumberGroup= new FormGroup({
-      country_id : new FormControl('',[
+    this.phoneNumberGroup = new FormGroup({
+      country_id : new FormControl('', [
        // Validators.requiredTrue,
         Validators.required
       ]),
-      phone: new FormControl('',[
+      phone: new FormControl('', [
           Validators.required,
          // Validators.requiredTrue
       ]),
       recaptchaReactive: new FormControl('', [
-        //Validators.required
+        // Validators.required
       ])
     });
   }
-  
- 
+
+
+
   resolved(captchaResponse: string) {
     console.log(`Resolved response token: ${captchaResponse}`);
   }
@@ -78,45 +71,43 @@ export class LoginComponent {
 
 
   constructor(
-    private router:Router,
-     private phoneNumberService:PhoneNumberService,
-     private authService:AuthService,
+    private router: Router,
+    private phoneNumberService: PhoneNumberService,
+    private authService: AuthService,
      ) {
 
 
-      this.phoneNumberService.getCountryCodes().subscribe(response =>{
-        this.countries = response['content'] as ICountry;
-        //console.log(this.countries);
-      })
-     
+      this.phoneNumberService.getCountryCodes().subscribe(response => {
+        this.countries = response.content as ICountry;
+        // console.log(this.countries);
+      });
+
   }
 
   ngOnInit(): void {
 
     this.initForm();
-    
+
     this.getPhoneNumber();
-    
+
   }
-
- 
-
 
   getPhoneNumber(){
 
     this.phoneNumberService.country_id = this.country_id.value;
     this.phoneNumberService.phoneNumber = this.get_phone.value;
-    
+
 
  }
 
  loginProcess(){
-   if(this.phoneNumberGroup.valid){
+   if (this.phoneNumberGroup.valid){
      this.authService.login(this.phoneNumberGroup.value)
-     //this.authService.login(sendedData)
+     // this.authService.login(sendedData)
      .subscribe( result => {
-          if(result)
+          if (result) {
             this.router.navigate(['./verification']);
+          }
      });
    }
  }

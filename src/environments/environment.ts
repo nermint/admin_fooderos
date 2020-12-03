@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpRequestUrl: "https://dev-api.fooderos.com/api/v1/",
+  httpRequestUrl: 'https://dev-api.fooderos.com/api/v1/',
   appKey: 'PXvr6k9RyeauDkLqbbcREK2PlpBFeWij',
   imageUrl: 'https://dev-api.fooderos.com/storage/'
 

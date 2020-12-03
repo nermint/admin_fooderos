@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { AuthService } from 'services/auth.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // alertify

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,  Validators, FormArray, FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { Locale, Tagtype, ITag } from 'src/app/shared/models/tag';
+import { AuthService } from 'services/auth.service';
+import { Locale, Tagtype, ITag } from 'shared/models/tag';
 import { ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 

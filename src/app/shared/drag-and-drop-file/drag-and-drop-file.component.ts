@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'environment/environment';
+import { DataService } from 'services/data.service';
 
 
 @Component({
@@ -10,9 +11,11 @@ import { environment } from 'environment/environment';
 })
 export class DragAndDropFileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService: DataService
+  ) { }
 
-  private _tag = new BehaviorSubject<any>([]);
+ private _tag = new BehaviorSubject<any>([]);
 
   @Input()
   set tag(value) {
@@ -26,11 +29,11 @@ export class DragAndDropFileComponent implements OnInit {
   }
 
 
+
   file;
 
   imgSrc;
   imageUrl = environment.imageUrl;
-
 
   ngOnInit(): void {
     // console.log(this.tag);
@@ -39,6 +42,8 @@ export class DragAndDropFileComponent implements OnInit {
       .subscribe(x => {
         // console.log(this.tag);
         if (this.tag){
+          console.log(' Behaviour subject');
+          console.log(this.dataService.tag);
           this.imgSrc = this.imageUrl + this.tag.media?.path + '/' + this.tag.media?.name;
         }
       });
